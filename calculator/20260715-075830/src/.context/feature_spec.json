@@ -1,11 +1,11 @@
 {
-  "id": "US-001",
-  "title": "Display and Number Input Foundation",
-  "user_story": "As a user, I want to see the calculator display with numbers so that I can enter values for calculation",
+  "id": "US-002",
+  "title": "Basic Operator Selection",
+  "user_story": "As a user, I want to select mathematical operations between numbers so that I can perform calculations with addition, subtraction, multiplication, and division",
   "acceptance_criteria": [
-    "Calculator displays an empty screen when first loaded",
-    "All number buttons (0-9) are visible and clickable on the interface",
-    "Each button press immediately updates the displayed value in real-time",
-    "Display shows up to 12 digits without truncation or overflow errors"
+    "Operator buttons (+, -, *, /) are visible and clickable on the interface",
+    "Selecting an operator stores it for later calculation without executing immediately",
+    "Multiple operators in sequence don't cause conflicts or errors",
+    "Display shows current expression with selected operator between numbers"
   ]
 }
