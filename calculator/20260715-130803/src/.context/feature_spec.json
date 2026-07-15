@@ -1,12 +1,11 @@
 {
-  "id": "US-001",
-  "title": "Perform Basic Arithmetic Operations",
-  "user_story": "As a user, I want to enter two numbers and select an operation (addition, subtraction, or multiplication), so that I can quickly calculate the result.",
+  "id": "US-002",
+  "title": "Handle Division and Edge Cases",
+  "user_story": "As a user, I want to perform division operations with proper error handling, so that the calculator remains stable when dividing by zero or receiving invalid data.",
   "acceptance_criteria": [
-    "The interface displays input fields for two numeric values.",
-    "The interface provides buttons or dropdown options for addition, subtraction, and multiplication.",
-    "Clicking a 'Calculate' button processes the inputs and operation.",
-    "The correct mathematical result is displayed on the screen after calculation.",
-    "Empty inputs are handled gracefully by showing an error message."
+    "The interface includes an option for division.",
+    "Dividing any number by zero displays a clear 'Division by zero is not allowed' message.",
+    "Entering non-numeric characters (letters, symbols) triggers an input validation error.",
+    "The calculator does not crash or freeze when invalid inputs are submitted."
   ]
 }

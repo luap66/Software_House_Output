@@ -83,6 +83,7 @@ HTML_TEMPLATE = """\
           <option value="add"{opt_add}>Addition (+)</option>
           <option value="subtract"{opt_subtract}>Subtraction (-)</option>
           <option value="multiply"{opt_multiply}>Multiplication (×)</option>
+          <option value="divide"{opt_divide}>Division (÷)</option>
         </select>
       </div>
       <button type="submit">Calculate</button>
@@ -105,6 +106,7 @@ def build_page(num1="", num2="", operation="add", result=None, error=None):
     opt_add = ' selected' if operation == "add" else ""
     opt_subtract = ' selected' if operation == "subtract" else ""
     opt_multiply = ' selected' if operation == "multiply" else ""
+    opt_divide = ' selected' if operation == "divide" else ""
 
     # Result / error block (server-rendered)
     result_html = ""
@@ -119,6 +121,7 @@ def build_page(num1="", num2="", operation="add", result=None, error=None):
         opt_add=opt_add,
         opt_subtract=opt_subtract,
         opt_multiply=opt_multiply,
+        opt_divide=opt_divide,
         result_html=result_html,
     )
 
@@ -171,6 +174,17 @@ class CalculatorHandler(BaseHTTPRequestHandler):
                         result = a - b
                     elif operation == "multiply":
                         result = a * b
+                    elif operation == "divide":
+                        if b == 0:
+                            html = build_page(
+                                num1=num1_raw,
+                                num2=num2_raw,
+                                operation=operation,
+                                error="Division by zero is not allowed.",
+                            )
+                            self._send_html(html)
+                            return
+                        result = a / b
                     else:
                         html = build_page(
                             num1=num1_raw,

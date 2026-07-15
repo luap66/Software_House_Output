@@ -10,7 +10,7 @@
       "The correct mathematical result is displayed on the screen after calculation.",
       "Empty inputs are handled gracefully by showing an error message."
     ],
-    "state": "in-development"
+    "state": "passed"
   },
   {
     "id": "US-002",
@@ -22,7 +22,7 @@
       "Entering non-numeric characters (letters, symbols) triggers an input validation error.",
       "The calculator does not crash or freeze when invalid inputs are submitted."
     ],
-    "state": "ready-for-development"
+    "state": "in-development"
   },
   {
     "id": "US-003",
