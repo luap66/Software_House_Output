@@ -1,0 +1,8 @@
+{
+  "feature_request": "I want to manage my todos. You can save the todos in memory. You don't need to create a database.",
+  "run_dir": "output/todo-app/20260715-154310",
+  "status": "us-001-developer-iteration-1",
+  "current_story_id": "us-001",
+  "developer_iteration": 1,
+  "last_feedback": "No prior feedback. Preserve completed stories while implementing the current story."
+}

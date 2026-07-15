@@ -1,0 +1,50 @@
+[
+  {
+    "id": "US-001",
+    "title": "Add New Todo",
+    "user_story": "As a user, I want to add new tasks to my list, so that I can keep track of what needs to be done.",
+    "acceptance_criteria": [
+      "The web page displays an input field and a submit button for entering task details.",
+      "Entering text and submitting adds the task to the visible list immediately.",
+      "Submitting an empty input shows a validation message or is ignored.",
+      "Tasks are stored temporarily in memory during the current session."
+    ],
+    "state": "in-development"
+  },
+  {
+    "id": "US-002",
+    "title": "View Todo List",
+    "user_story": "As a user, I want to see all my current tasks on one page, so that I can review what I need to accomplish.",
+    "acceptance_criteria": [
+      "The web page displays a clear list of all added todos.",
+      "Each todo shows its text content clearly.",
+      "If no todos exist, the page shows a friendly message like 'No tasks yet.'",
+      "Newly added todos appear in the list immediately after creation."
+    ],
+    "state": "ready-for-development"
+  },
+  {
+    "id": "US-003",
+    "title": "Mark Todo as Complete or Edit Text",
+    "user_story": "As a user, I want to mark tasks as done or edit their text, so that my list stays accurate and up-to-date.",
+    "acceptance_criteria": [
+      "Each todo in the list has an option to toggle its completion status such as a checkbox.",
+      "Completed todos are visually distinguished with strikethrough or dimmed styling.",
+      "Users can edit the text of a todo, and changes reflect immediately upon saving.",
+      "All updates persist only for the current browser session in memory."
+    ],
+    "state": "ready-for-development"
+  },
+  {
+    "id": "US-004",
+    "title": "Delete Todo from List",
+    "user_story": "As a user, I want to delete tasks I no longer need, so that my list stays clean and focused.",
+    "acceptance_criteria": [
+      "Each todo has a visible delete button or link.",
+      "Clicking delete removes the item from the list immediately without requiring a full page reload.",
+      "Deleted todos cannot be recovered within the same session.",
+      "The remaining todos shift to fill the gap smoothly."
+    ],
+    "state": "ready-for-development"
+  }
+]
