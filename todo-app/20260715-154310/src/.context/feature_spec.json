@@ -1,11 +1,11 @@
 {
-  "id": "US-001",
-  "title": "Add New Todo",
-  "user_story": "As a user, I want to add new tasks to my list, so that I can keep track of what needs to be done.",
+  "id": "US-002",
+  "title": "View Todo List",
+  "user_story": "As a user, I want to see all my current tasks on one page, so that I can review what I need to accomplish.",
   "acceptance_criteria": [
-    "The web page displays an input field and a submit button for entering task details.",
-    "Entering text and submitting adds the task to the visible list immediately.",
-    "Submitting an empty input shows a validation message or is ignored.",
-    "Tasks are stored temporarily in memory during the current session."
+    "The web page displays a clear list of all added todos.",
+    "Each todo shows its text content clearly.",
+    "If no todos exist, the page shows a friendly message like 'No tasks yet.'",
+    "Newly added todos appear in the list immediately after creation."
   ]
 }

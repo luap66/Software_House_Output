@@ -1,17 +1,18 @@
 {
   "command": "python3 -m pytest /tests -q --junitxml=/tests/test-results.xml",
-  "exit_code": 0,
+  "exit_code": 1,
   "counts": {
-    "tests": 2,
-    "failures": 0,
+    "tests": 4,
+    "failures": 1,
     "errors": 0,
     "skipped": 0
   },
-  "output": "..                                                                                  [100%]\n2 passed in 0.03s",
+  "output": "..F.                                                                                [100%]\n======================================== FAILURES =========================================\n_______________________ test_01_empty_state_shows_friendly_message ________________________\n\n    def test_01_empty_state_shows_friendly_message():\n        \"\"\"Criteria 3: If no todos exist, the page shows a friendly message like 'No tasks yet.'\"\"\"\n        req = urllib.request.Request(BASE_URL)\n        with urllib.request.urlopen(req) as resp:\n            html = resp.read().decode(\"utf-8\")\n    \n        assert \"empty-state\" in html, \"Empty state element not found when no todos exist.\"\n>       assert \"No tasks yet\" in html, \"Friendly 'No tasks yet' message missing from empty state.\"\nE       AssertionError: Friendly 'No tasks yet' message missing from empty state.\nE       assert 'No tasks yet' in '<!DOCTYPE html>\\n<html lang=\"en\">\\n<head>\\n<meta charset=\"UTF-8\">\\n<meta name=\"viewport\" content=\"width=device-width,...\\n    document.querySelector(\\'.error-message\\').classList.remove(\\'visible\\');\\n  }\\n});\\n</script>\\n</body>\\n</html>'\n\ntest_us-002.py:15: AssertionError\n================================= short test summary info =================================\nFAILED test_us-002.py::test_01_empty_state_shows_friendly_message - AssertionError: Frie...\n1 failed, 3 passed in 0.06s",
   "test_files": [
-    "test_us-001.py"
+    "test_us-001.py",
+    "test_us-002.py"
   ],
   "screenshots": [],
-  "passed": true,
+  "passed": false,
   "test_contract_error": ""
 }

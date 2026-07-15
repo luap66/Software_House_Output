@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="0.032" timestamp="2026-07-15T15:58:48.006315+00:00" hostname="jupyter-infwca267"><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_add_todo" time="0.005" /><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_empty_input_validation" time="0.001" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="4" time="0.062" timestamp="2026-07-15T16:03:44.827006+00:00" hostname="jupyter-infwca267"><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_add_todo" time="0.006" /><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_empty_input_validation" time="0.001" /><testcase classname="output.todo-app.20260715-154310.test.test_us-002" name="test_01_empty_state_shows_friendly_message" time="0.001"><failure message="AssertionError: Friendly 'No tasks yet' message missing from empty state.&#10;assert 'No tasks yet' in '&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n&lt;head&gt;\n&lt;meta charset=&quot;UTF-8&quot;&gt;\n&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,...\n    document.querySelector(\'.error-message\').classList.remove(\'visible\');\n  }\n});\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;'">def test_01_empty_state_shows_friendly_message():
+        """Criteria 3: If no todos exist, the page shows a friendly message like 'No tasks yet.'"""
+        req = urllib.request.Request(BASE_URL)
+        with urllib.request.urlopen(req) as resp:
+            html = resp.read().decode("utf-8")
+    
+        assert "empty-state" in html, "Empty state element not found when no todos exist."
+&gt;       assert "No tasks yet" in html, "Friendly 'No tasks yet' message missing from empty state."
+E       AssertionError: Friendly 'No tasks yet' message missing from empty state.
+E       assert 'No tasks yet' in '&lt;!DOCTYPE html&gt;\n&lt;html lang="en"&gt;\n&lt;head&gt;\n&lt;meta charset="UTF-8"&gt;\n&lt;meta name="viewport" content="width=device-width,...\n    document.querySelector(\'.error-message\').classList.remove(\'visible\');\n  }\n});\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;'
+
+test_us-002.py:15: AssertionError</failure></testcase><testcase classname="output.todo-app.20260715-154310.test.test_us-002" name="test_02_add_todo_and_view_in_list" time="0.002" /></testsuite></testsuites>

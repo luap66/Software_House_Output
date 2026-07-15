@@ -9,7 +9,7 @@
       "Submitting an empty input shows a validation message or is ignored.",
       "Tasks are stored temporarily in memory during the current session."
     ],
-    "state": "in-development"
+    "state": "passed"
   },
   {
     "id": "US-002",
@@ -21,7 +21,7 @@
       "If no todos exist, the page shows a friendly message like 'No tasks yet.'",
       "Newly added todos appear in the list immediately after creation."
     ],
-    "state": "ready-for-development"
+    "state": "in-development"
   },
   {
     "id": "US-003",
