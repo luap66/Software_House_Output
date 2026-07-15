@@ -1,0 +1,50 @@
+[
+  {
+    "id": "US-001",
+    "title": "Add New Task",
+    "user_story": "As a user, I want to add a new task to my list, so that I can capture things I need to do.",
+    "acceptance_criteria": [
+      "A text input field and an 'Add' button are visible on the main page.",
+      "Entering text and clicking 'Add' creates a new item in the todo list.",
+      "The input field clears automatically after successful submission.",
+      "Submitting empty or whitespace-only text does not create a new item."
+    ],
+    "state": "in-development"
+  },
+  {
+    "id": "US-002",
+    "title": "View Task List",
+    "user_story": "As a user, I want to see all my tasks in a clear list, so that I can review what needs to be done.",
+    "acceptance_criteria": [
+      "The page displays a scrollable list of all added todos.",
+      "Each todo shows its full text content clearly and legibly.",
+      "Newly added todos appear at the top of the list immediately.",
+      "The list updates dynamically without requiring a manual page refresh."
+    ],
+    "state": "ready-for-development"
+  },
+  {
+    "id": "US-003",
+    "title": "Mark Task as Complete or Incomplete",
+    "user_story": "As a user, I want to mark tasks as done or undone, so that I can track my progress.",
+    "acceptance_criteria": [
+      "Each todo item includes a clickable checkbox or toggle control.",
+      "Clicking the control changes the visual state (e.g., strikethrough text or muted color).",
+      "The completion status persists correctly across page interactions within the session.",
+      "Toggling the control again restores the original appearance and active status."
+    ],
+    "state": "ready-for-development"
+  },
+  {
+    "id": "US-004",
+    "title": "Remove Task from List",
+    "user_story": "As a user, I want to delete tasks from my list, so that I can keep it clean and focused.",
+    "acceptance_criteria": [
+      "Each todo item displays a visible 'Delete' button or icon.",
+      "Clicking the delete control removes the item immediately from the view.",
+      "The remaining todos shift smoothly to fill the gap without layout breaks.",
+      "Deleted items cannot be recovered within the current session."
+    ],
+    "state": "ready-for-development"
+  }
+]

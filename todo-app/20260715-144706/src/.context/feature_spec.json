@@ -1,0 +1,11 @@
+{
+  "id": "US-001",
+  "title": "Add New Task",
+  "user_story": "As a user, I want to add a new task to my list, so that I can capture things I need to do.",
+  "acceptance_criteria": [
+    "A text input field and an 'Add' button are visible on the main page.",
+    "Entering text and clicking 'Add' creates a new item in the todo list.",
+    "The input field clears automatically after successful submission.",
+    "Submitting empty or whitespace-only text does not create a new item."
+  ]
+}
