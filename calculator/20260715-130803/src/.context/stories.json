@@ -1,0 +1,39 @@
+[
+  {
+    "id": "US-001",
+    "title": "Perform Basic Arithmetic Operations",
+    "user_story": "As a user, I want to enter two numbers and select an operation (addition, subtraction, or multiplication), so that I can quickly calculate the result.",
+    "acceptance_criteria": [
+      "The interface displays input fields for two numeric values.",
+      "The interface provides buttons or dropdown options for addition, subtraction, and multiplication.",
+      "Clicking a 'Calculate' button processes the inputs and operation.",
+      "The correct mathematical result is displayed on the screen after calculation.",
+      "Empty inputs are handled gracefully by showing an error message."
+    ],
+    "state": "in-development"
+  },
+  {
+    "id": "US-002",
+    "title": "Handle Division and Edge Cases",
+    "user_story": "As a user, I want to perform division operations with proper error handling, so that the calculator remains stable when dividing by zero or receiving invalid data.",
+    "acceptance_criteria": [
+      "The interface includes an option for division.",
+      "Dividing any number by zero displays a clear 'Division by zero is not allowed' message.",
+      "Entering non-numeric characters (letters, symbols) triggers an input validation error.",
+      "The calculator does not crash or freeze when invalid inputs are submitted."
+    ],
+    "state": "ready-for-development"
+  },
+  {
+    "id": "US-003",
+    "title": "Clear Inputs and Results",
+    "user_story": "As a user, I want to clear all entered values and displayed results with a single action, so that I can start a new calculation easily.",
+    "acceptance_criteria": [
+      "A 'Clear' or 'Reset' button is visible on the interface.",
+      "Clicking the button empties all input fields.",
+      "The result display area is cleared after clicking the button.",
+      "The calculator returns to its initial ready state without requiring a page refresh."
+    ],
+    "state": "ready-for-development"
+  }
+]
