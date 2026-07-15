@@ -1,11 +1,11 @@
 {
-  "id": "US-002",
-  "title": "Basic Operator Selection",
-  "user_story": "As a user, I want to select mathematical operations between numbers so that I can perform calculations with addition, subtraction, multiplication, and division",
+  "id": "US-003",
+  "title": "Equals Calculation and Error Handling",
+  "user_story": "As a user, I want to calculate the result of my entered expression so that I get an immediate answer for any valid calculation",
   "acceptance_criteria": [
-    "Operator buttons (+, -, *, /) are visible and clickable on the interface",
-    "Selecting an operator stores it for later calculation without executing immediately",
-    "Multiple operators in sequence don't cause conflicts or errors",
-    "Display shows current expression with selected operator between numbers"
+    "Pressing equals calculates and displays the correct mathematical result",
+    "Division by zero shows appropriate error message instead of crashing",
+    "New number input after seeing results clears previous operation state",
+    "Invalid expressions (like multiple consecutive operators) are handled gracefully"
   ]
 }

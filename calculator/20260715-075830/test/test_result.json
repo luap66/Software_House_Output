@@ -2,15 +2,16 @@
   "command": "python3 -m pytest /tests -q --junitxml=/tests/test-results.xml",
   "exit_code": 0,
   "counts": {
-    "tests": 4,
+    "tests": 6,
     "failures": 0,
     "errors": 0,
     "skipped": 0
   },
-  "output": "....                                                                                [100%]\n4 passed in 0.03s",
+  "output": "......                                                                              [100%]\n6 passed in 0.04s",
   "test_files": [
     "test_us-001.py",
-    "test_us-002.py"
+    "test_us-002.py",
+    "test_us-003.py"
   ],
   "screenshots": [],
   "passed": true,
