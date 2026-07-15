@@ -140,7 +140,7 @@ button:focus {{
 <button class="number-btn" data-value="8" onclick="updateDisplay('8')">8</button>
 <button class="number-btn" data-value="9" onclick="updateDisplay('9')">9</button>
 <button class="operator-btn clear-btn" onclick="clearDisplay()">C</button>
-<button class="equals-btn operator-btn" onclick="deleteLastChar()">DEL</button>
+<button class="equals-btn operator-btn" onclick="calculateResult()">=</button>
 <button class="number-btn" data-value="+" onclick="selectOperator('+')">+</button>
 <button class="number-btn" data-value="-" onclick="selectOperator('-')">-</button>
 <button class="number-btn" data-value="*" onclick="selectOperator('*')">*</button>
@@ -166,8 +166,12 @@ button:focus {{
         if (display.value === '') {{
             display.value = value;
             firstNumberEntered = true;
+        }} else if (!pendingOperator) {{
+            // Post-calculation state: new digit replaces result instead of appending
+            display.value = value;
+            firstNumberEntered = true;
         }} else {{
-            // Append the digit to current display
+            // Append the digit to current display (during expression building)
             display.value += value;
         }}
     }}
@@ -229,7 +233,14 @@ button:focus {{
             const remainingParts = expression.split(opStr).map(s => s.trim());
             
             if (remainingParts.length >= 2) {{
-                num2 = parseFloat(remainingParts[1]);
+                const num2Str = remainingParts[1].trim();
+                
+                // Check for invalid expressions like multiple consecutive operators
+                if (!num2Str || isNaN(parseFloat(num2Str))) {{
+                    return '';
+                }}
+                
+                num2 = parseFloat(num2Str);
                 
                 // Perform calculation based on selected operator
                 let result;

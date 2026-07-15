@@ -21,7 +21,7 @@
       "Multiple operators in sequence don't cause conflicts or errors",
       "Display shows current expression with selected operator between numbers"
     ],
-    "state": "in-development"
+    "state": "passed"
   },
   {
     "id": "US-003",
@@ -33,6 +33,6 @@
       "New number input after seeing results clears previous operation state",
       "Invalid expressions (like multiple consecutive operators) are handled gracefully"
     ],
-    "state": "ready-for-development"
+    "state": "in-development"
   }
 ]
