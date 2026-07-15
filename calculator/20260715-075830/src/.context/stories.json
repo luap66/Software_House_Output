@@ -9,7 +9,7 @@
       "Each button press immediately updates the displayed value in real-time",
       "Display shows up to 12 digits without truncation or overflow errors"
     ],
-    "state": "in-development"
+    "state": "passed"
   },
   {
     "id": "US-002",
@@ -21,7 +21,7 @@
       "Multiple operators in sequence don't cause conflicts or errors",
       "Display shows current expression with selected operator between numbers"
     ],
-    "state": "ready-for-development"
+    "state": "in-development"
   },
   {
     "id": "US-003",

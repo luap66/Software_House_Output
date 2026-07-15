@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Calculator web application - US-001: Display and Number Input Foundation."""
+"""Calculator web application - US-001: Display and Number Input Foundation.
+
+US-002 implementation adds operator selection functionality for basic calculations.
+"""
 
 import os
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -138,12 +141,20 @@ button:focus {{
 <button class="number-btn" data-value="9" onclick="updateDisplay('9')">9</button>
 <button class="operator-btn clear-btn" onclick="clearDisplay()">C</button>
 <button class="equals-btn operator-btn" onclick="deleteLastChar()">DEL</button>
+<button class="number-btn" data-value="+" onclick="selectOperator('+')">+</button>
+<button class="number-btn" data-value="-" onclick="selectOperator('-')">-</button>
+<button class="number-btn" data-value="*" onclick="selectOperator('*')">*</button>
+<button class="number-btn" data-value="/" onclick="selectOperator('/')">/</button>
 </div>
 </div>
 
 <script>
 (function() {{
     const display = document.getElementById('display');
+    
+    // Store the selected operator for later calculation
+    let pendingOperator = null;
+    let firstNumberEntered = false;
     
     function updateDisplay(value) {{
         // Limit to 12 digits as per acceptance criteria
@@ -154,6 +165,7 @@ button:focus {{
         // If display is empty and user enters a number, start fresh
         if (display.value === '') {{
             display.value = value;
+            firstNumberEntered = true;
         }} else {{
             // Append the digit to current display
             display.value += value;
@@ -162,12 +174,99 @@ button:focus {{
 
     function clearDisplay() {{
         display.value = '';
+        pendingOperator = null;
+        firstNumberEntered = false;
     }}
 
     function deleteLastChar() {{
         if (display.value.length > 0) {{
             display.value = display.value.slice(0, -1);
+            
+            // If display is empty after deletion and we have a pending operator, clear it
+            if (!firstNumberEntered && pendingOperator !== null) {{
+                pendingOperator = null;
+            }} else if (display.value === '' && firstNumberEntered) {{
+                firstNumberEntered = false;
+            }}
         }}
+    }}
+
+    function selectOperator(op) {{
+        // Store the selected operator without executing immediately
+        if (display.value !== '') {{
+            // Replace any existing operators in display to prevent malformed expressions like "5 + -"
+            const cleanValue = display.value.replace(/[\s+\-*/]/g, '').trim();
+            pendingOperator = op;
+            display.value = cleanValue + ' ' + op;
+        }} else {{
+            // No number yet - just store the operator for when user enters first number
+            pendingOperator = op;
+        }}
+    }}
+
+    function calculateResult() {{
+        const expression = display.value.trim();
+        
+        if (!expression || !pendingOperator) {{
+            return '';
+        }}
+        
+        // Parse numbers and operator from the expression
+        let num1, num2;
+        
+        try {{
+            // Extract first number (before operator)
+            const parts = expression.split(/[\s+\-*/]/);
+            
+            if (parts.length < 2 || !parts[0] || !parts[1]) {{
+                return '';
+            }}
+            
+            num1 = parseFloat(parts[0]);
+            let opStr = pendingOperator;
+            
+            // Handle the operator in parts array
+            const remainingParts = expression.split(opStr).map(s => s.trim());
+            
+            if (remainingParts.length >= 2) {{
+                num2 = parseFloat(remainingParts[1]);
+                
+                // Perform calculation based on selected operator
+                let result;
+                switch (opStr) {{
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 === 0) {{
+                            return 'Error: Division by zero';
+                        }}
+                        result = num1 / num2;
+                        break;
+                }}
+                
+                // Format the result to avoid long decimals
+                display.value = parseFloat(result).toString();
+            }} else {{
+                return '';
+            }}
+        }} catch (e) {{
+            display.value = 'Error';
+        }}
+        
+        // Reset state after calculation - clear pending operator and first number flag
+        pendingOperator = null;
+        firstNumberEntered = false;
+    }}
+
+    function handleEquals() {{
+        calculateResult();
     }}
 
     // Prevent default button behavior and handle clicks via onclick attributes
