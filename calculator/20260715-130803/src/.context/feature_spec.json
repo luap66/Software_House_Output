@@ -1,0 +1,12 @@
+{
+  "id": "US-001",
+  "title": "Perform Basic Arithmetic Operations",
+  "user_story": "As a user, I want to enter two numbers and select an operation (addition, subtraction, or multiplication), so that I can quickly calculate the result.",
+  "acceptance_criteria": [
+    "The interface displays input fields for two numeric values.",
+    "The interface provides buttons or dropdown options for addition, subtraction, and multiplication.",
+    "Clicking a 'Calculate' button processes the inputs and operation.",
+    "The correct mathematical result is displayed on the screen after calculation.",
+    "Empty inputs are handled gracefully by showing an error message."
+  ]
+}
