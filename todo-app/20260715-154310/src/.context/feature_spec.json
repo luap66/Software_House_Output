@@ -1,0 +1,11 @@
+{
+  "id": "US-001",
+  "title": "Add New Todo",
+  "user_story": "As a user, I want to add new tasks to my list, so that I can keep track of what needs to be done.",
+  "acceptance_criteria": [
+    "The web page displays an input field and a submit button for entering task details.",
+    "Entering text and submitting adds the task to the visible list immediately.",
+    "Submitting an empty input shows a validation message or is ignored.",
+    "Tasks are stored temporarily in memory during the current session."
+  ]
+}
