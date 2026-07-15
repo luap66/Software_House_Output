@@ -1,11 +1,11 @@
 {
-  "id": "US-001",
-  "title": "Add New Todo",
-  "user_story": "As a user, I want to add new tasks to my list, so that I can keep track of what needs to be done.",
+  "id": "US-003",
+  "title": "Mark Todo as Complete or Edit Text",
+  "user_story": "As a user, I want to mark tasks as done or edit their text, so that my list stays accurate and up-to-date.",
   "acceptance_criteria": [
-    "The web page displays an input field and a submit button for entering task details.",
-    "Entering text and submitting adds the task to the visible list immediately.",
-    "Submitting an empty input shows a validation message or is ignored.",
-    "Tasks are stored temporarily in memory during the current session."
+    "Each todo in the list has an option to toggle its completion status such as a checkbox.",
+    "Completed todos are visually distinguished with strikethrough or dimmed styling.",
+    "Users can edit the text of a todo, and changes reflect immediately upon saving.",
+    "All updates persist only for the current browser session in memory."
   ]
 }
