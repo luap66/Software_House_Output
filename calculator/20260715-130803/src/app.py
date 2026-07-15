@@ -56,6 +56,11 @@ HTML_TEMPLATE = """\
       transition: background .2s;
     }}
     button:hover {{ background: #3b5998; }}
+    .btn-clear {{
+      margin-top: .75rem;
+      background: #c0392b;
+    }}
+    .btn-clear:hover {{ background: #a93226; }}
     .result {{ margin-top: 1.2rem; text-align: center; font-size: 1.1rem; padding: .75rem; border-radius: 8px; }}
     .result.success {{ background: #e6f4ea; color: #1b7a3d; }}
     .result.error   {{ background: #fce8e6; color: #c0392b; }}
@@ -87,9 +92,24 @@ HTML_TEMPLATE = """\
         </select>
       </div>
       <button type="submit">Calculate</button>
+      <button type="button" id="clearBtn" class="btn-clear">Clear</button>
     </form>
 {result_html}
   </div>
+  <script>
+    document.getElementById('clearBtn').addEventListener('click', function() {{
+      // Clear input fields
+      document.getElementById('num1').value = '';
+      document.getElementById('num2').value = '';
+      // Reset operation to default
+      document.getElementById('operation').value = 'add';
+      // Clear result display area
+      var resultDivs = document.querySelectorAll('.result');
+      for (var i = 0; i < resultDivs.length; i++) {{
+        resultDivs[i].remove();
+      }}
+    }});
+  </script>
 </body>
 </html>
 """

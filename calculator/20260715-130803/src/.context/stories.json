@@ -22,7 +22,7 @@
       "Entering non-numeric characters (letters, symbols) triggers an input validation error.",
       "The calculator does not crash or freeze when invalid inputs are submitted."
     ],
-    "state": "in-development"
+    "state": "passed"
   },
   {
     "id": "US-003",
@@ -34,6 +34,6 @@
       "The result display area is cleared after clicking the button.",
       "The calculator returns to its initial ready state without requiring a page refresh."
     ],
-    "state": "ready-for-development"
+    "state": "in-development"
   }
 ]

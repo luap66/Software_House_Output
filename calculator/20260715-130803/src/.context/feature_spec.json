@@ -1,11 +1,11 @@
 {
-  "id": "US-002",
-  "title": "Handle Division and Edge Cases",
-  "user_story": "As a user, I want to perform division operations with proper error handling, so that the calculator remains stable when dividing by zero or receiving invalid data.",
+  "id": "US-003",
+  "title": "Clear Inputs and Results",
+  "user_story": "As a user, I want to clear all entered values and displayed results with a single action, so that I can start a new calculation easily.",
   "acceptance_criteria": [
-    "The interface includes an option for division.",
-    "Dividing any number by zero displays a clear 'Division by zero is not allowed' message.",
-    "Entering non-numeric characters (letters, symbols) triggers an input validation error.",
-    "The calculator does not crash or freeze when invalid inputs are submitted."
+    "A 'Clear' or 'Reset' button is visible on the interface.",
+    "Clicking the button empties all input fields.",
+    "The result display area is cleared after clicking the button.",
+    "The calculator returns to its initial ready state without requiring a page refresh."
   ]
 }
