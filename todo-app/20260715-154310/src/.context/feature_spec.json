@@ -1,11 +1,11 @@
 {
-  "id": "US-001",
-  "title": "Add New Todo",
-  "user_story": "As a user, I want to add new tasks to my list, so that I can keep track of what needs to be done.",
+  "id": "US-004",
+  "title": "Delete Todo from List",
+  "user_story": "As a user, I want to delete tasks I no longer need, so that my list stays clean and focused.",
   "acceptance_criteria": [
-    "The web page displays an input field and a submit button for entering task details.",
-    "Entering text and submitting adds the task to the visible list immediately.",
-    "Submitting an empty input shows a validation message or is ignored.",
-    "Tasks are stored temporarily in memory during the current session."
+    "Each todo has a visible delete button or link.",
+    "Clicking delete removes the item from the list immediately without requiring a full page reload.",
+    "Deleted todos cannot be recovered within the same session.",
+    "The remaining todos shift to fill the gap smoothly."
   ]
 }
