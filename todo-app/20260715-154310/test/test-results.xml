@@ -1,1 +1,417 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="0.032" timestamp="2026-07-15T15:58:48.006315+00:00" hostname="jupyter-infwca267"><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_add_todo" time="0.005" /><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_empty_input_validation" time="0.001" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="0.063" timestamp="2026-07-15T22:57:05.761950+00:00" hostname="jupyter-infwca267"><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_add_todo" time="0.006"><failure message="AssertionError: Task not added to visible list. Got:&#10;  &lt;!DOCTYPE html&gt;&#10;  &lt;html lang=&quot;en&quot;&gt;&#10;  &lt;head&gt;&#10;  &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;  &lt;title&gt;Todo App&lt;/title&gt;&#10;  &lt;style&gt;&#10;    * { box-sizing: border-box; margin: 0; padding: 0; }&#10;    body {&#10;      font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;&#10;      background-color: #f5f7fa;&#10;      color: #333;&#10;      line-height: 1.6;&#10;      padding: 20px;&#10;    }&#10;    .container {&#10;      max-width: 600px;&#10;      margin: 0 auto;&#10;      padding: 20px;&#10;    }&#10;    h1 {&#10;      text-align: center;&#10;      color: #2c3e50;&#10;      margin-bottom: 24px;&#10;      font-size: 1.8rem;&#10;    }&#10;    .input-form {&#10;      display: flex;&#10;      gap: 10px;&#10;      margin-bottom: 20px;&#10;    }&#10;    .input-form input[type=&quot;text&quot;] {&#10;      flex: 1;&#10;      padding: 12px 16px;&#10;      border: 2px solid #ddd;&#10;      border-radius: 8px;&#10;      font-size: 1rem;&#10;      outline: none;&#10;      transition: border-color 0.2s;&#10;    }&#10;    .input-form input[type=&quot;text&quot;]:focus {&#10;      border-color: #3498db;&#10;    }&#10;    .input-form button {&#10;      padding: 12px 24px;&#10;      background-color: #3498db;&#10;      color: white;&#10;      border: none;&#10;      border-radius: 8px;&#10;      font-size: 1rem;&#10;      cursor: pointer;&#10;      transition: background-color 0.2s;&#10;      white-space: nowrap;&#10;    }&#10;    .input-form button:hover {&#10;      background-color: #2980b9;&#10;    }&#10;    .error-message {&#10;      color: #e74c3c;&#10;      font-size: 0.9rem;&#10;      margin-bottom: 16px;&#10;      padding: 10px;&#10;      background-color: #fdecea;&#10;      border-radius: 6px;&#10;      display: none;&#10;    }&#10;    .error-message.visible {&#10;      display: block;&#10;    }&#10;    .empty-state {&#10;      text-align: center;&#10;      color: #7f8c8d;&#10;      font-size: 1.1rem;&#10;      padding: 40px 20px;&#10;      background-color: #fff;&#10;      border-radius: 8px;&#10;      box-shadow: 0 2px 4px rgba(0,0,0,0.08);&#10;    }&#10;    .todo-list {&#10;      list-style: none;&#10;    }&#10;    .todo-item {&#10;      background-color: #fff;&#10;      padding: 14px 18px;&#10;      margin-bottom: 10px;&#10;      border-radius: 8px;&#10;      box-shadow: 0 2px 4px rgba(0,0,0,0.08);&#10;      font-size: 1rem;&#10;      word-break: break-word;&#10;      display: flex;&#10;      align-items: center;&#10;      gap: 12px;&#10;    }&#10;    .todo-item.completed {&#10;      background-color: #f8f9fa;&#10;      opacity: 0.6;&#10;    }&#10;    .todo-item.completed .todo-text {&#10;      text-decoration: line-through;&#10;      color: #95a5a6;&#10;    }&#10;    .todo-checkbox {&#10;      width: 20px;&#10;      height: 20px;&#10;      cursor: pointer;&#10;      flex-shrink: 0;&#10;    }&#10;    .todo-text {&#10;      flex: 1;&#10;      word-break: break-word;&#10;    }&#10;    .edit-input {&#10;      flex: 1;&#10;      padding: 6px 10px;&#10;      border: 2px solid #3498db;&#10;      border-radius: 6px;&#10;      font-size: 1rem;&#10;      outline: none;&#10;    }&#10;    .edit-save-btn {&#10;      padding: 4px 12px;&#10;      background-color: #27ae60;&#10;      color: white;&#10;      border: none;&#10;      border-radius: 4px;&#10;      font-size: 0.85rem;&#10;      cursor: pointer;&#10;      flex-shrink: 0;&#10;    }&#10;    .edit-save-btn:hover {&#10;      background-color: #219a52;&#10;    }&#10;    .edit-cancel-btn {&#10;      padding: 4px 12px;&#10;      background-color: #95a5a6;&#10;      color: white;&#10;      border: none;&#10;      border-radius: 4px;&#10;      font-size: 0.85rem;&#10;      cursor: pointer;&#10;      flex-shrink: 0;&#10;    }&#10;    .edit-cancel-btn:hover {&#10;      background-color: #7f8c8d;&#10;    }&#10;    .todo-actions {&#10;      display: flex;&#10;      gap: 6px;&#10;      flex-shrink: 0;&#10;    }&#10;    .delete-btn {&#10;      padding: 4px 10px;&#10;      background-color: #e74c3c;&#10;      color: white;&#10;      border: none;&#10;      border-radius: 4px;&#10;      font-size: 0.85rem;&#10;      cursor: pointer;&#10;    }&#10;    .delete-btn:hover {&#10;      background-color: #c0392b;&#10;    }&#10;    .edit-btn {&#10;      padding: 4px 10px;&#10;      background-color: #f39c12;&#10;      color: white;&#10;      border: none;&#10;      border-radius: 4px;&#10;      font-size: 0.85rem;&#10;      cursor: pointer;&#10;    }&#10;    .edit-btn:hover {&#10;      background-color: #e67e22;&#10;    }&#10;    @media (max-width: 480px) {&#10;      .container { padding: 12px; }&#10;      h1 { font-size: 1.5rem; margin-bottom: 16px; }&#10;      .input-form { flex-direction: column; gap: 8px; }&#10;      .input-form button { width: 100%; }&#10;      body { padding: 10px; }&#10;      .todo-item { flex-wrap: wrap; }&#10;      .todo-actions { margin-top: 6px; }&#10;    }&#10;  &lt;/style&gt;&#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;  &lt;div class=&quot;container&quot;&gt;&#10;    &lt;h1&gt;My Todos&lt;/h1&gt;&#10;  &#10;    &lt;form class=&quot;input-form&quot; method=&quot;post&quot; action=&quot;/&quot;&gt;&#10;      &lt;input type=&quot;text&quot; id=&quot;todo-input&quot; name=&quot;task&quot; placeholder=&quot;Enter a new task...&quot; autocomplete=&quot;off&quot;&gt;&#10;      &lt;button type=&quot;submit&quot;&gt;Add Task&lt;/button&gt;&#10;    &lt;/form&gt;&#10;  &#10;    &lt;div class=&quot;error-message&quot;&gt;&lt;/div&gt;&#10;  &#10;    &lt;div class=&quot;empty-state&quot; style=&quot;display:none;&quot;&gt;No tasks yet&lt;/div&gt;&#10;    &lt;ul class=&quot;todo-list&quot;&gt;&#10;      &lt;li class=&quot;todo-item&quot; data-id=&quot;1&quot;&gt;&#10;        &lt;input type=&quot;checkbox&quot; class=&quot;todo-checkbox&quot; id=&quot;cb-1&quot; name=&quot;toggle&quot; value=&quot;1&quot;&gt;&#10;        &lt;label for=&quot;cb-1&quot;&gt;&lt;span class=&quot;todo-text&quot;&gt;Beta&lt;/span&gt;&lt;/label&gt;&#10;        &lt;div class=&quot;todo-actions&quot;&gt;&#10;          &lt;button class=&quot;edit-btn&quot; data-id=&quot;1&quot;&gt;Edit&lt;/button&gt;&#10;          &lt;button class=&quot;delete-btn&quot; data-id=&quot;1&quot;&gt;Delete&lt;/button&gt;&#10;        &lt;/div&gt;&#10;      &lt;/li&gt;&#10;      &lt;li class=&quot;todo-item&quot; data-id=&quot;2&quot;&gt;&#10;        &lt;input type=&quot;checkbox&quot; class=&quot;todo-checkbox&quot; id=&quot;cb-2&quot; name=&quot;toggle&quot; value=&quot;2&quot;&gt;&#10;        &lt;label for=&quot;cb-2&quot;&gt;&lt;span class=&quot;todo-text&quot;&gt;Buy groceries&lt;/span&gt;&lt;/label&gt;&#10;        &lt;div class=&quot;todo-actions&quot;&gt;&#10;          &lt;button class=&quot;edit-btn&quot; data-id=&quot;2&quot;&gt;Edit&lt;/button&gt;&#10;          &lt;button class=&quot;delete-btn&quot; data-id=&quot;2&quot;&gt;Delete&lt;/button&gt;&#10;        &lt;/div&gt;&#10;      &lt;/li&gt;&#10;    &lt;/ul&gt;&#10;  &lt;/div&gt;&#10;  &lt;script&gt;&#10;  document.querySelector('.input-form').addEventListener('submit', function(e) {&#10;    var input = document.getElementById('todo-input');&#10;    var value = input.value.trim();&#10;    if (!value) {&#10;      e.preventDefault();&#10;      document.querySelector('.error-message').textContent = 'Please enter a task.';&#10;      document.querySelector('.error-message').classList.add('visible');&#10;      return;&#10;    }&#10;  });&#10;  document.getElementById('todo-input').addEventListener('input', function() {&#10;    if (this.value.trim()) {&#10;      document.querySelector('.error-message').classList.remove('visible');&#10;    }&#10;  });&#10;  // Toggle todo completion status&#10;  document.querySelectorAll('.todo-checkbox').forEach(function(cb) {&#10;    cb.addEventListener('change', function() {&#10;      var id = this.getAttribute('value');&#10;      var params = new URLSearchParams();&#10;      params.append('id', id);&#10;      fetch('/toggle', {&#10;        method: 'POST',&#10;        headers: {'Content-Type': 'application/x-www-form-urlencoded'},&#10;        body: params&#10;      }).then(function(r) { return r.text(); })&#10;      .then(function(html) {&#10;        document.body.innerHTML = html;&#10;        initEventListeners();&#10;      });&#10;    });&#10;  });&#10;  // Enable inline editing for todos&#10;  document.querySelectorAll('.edit-btn').forEach(function(btn) {&#10;    btn.addEventListener('click', function() {&#10;      var id = this.getAttribute('data-id');&#10;      var li = this.closest('.todo-item');&#10;      var textSpan = li.querySelector('.todo-text');&#10;      var originalText = textSpan.textContent;&#10;      var actionsDiv = li.querySelector('.todo-actions');&#10;      var escapedVal = originalText.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;').replace(/&quot;/g, '&amp;#34;');&#10;      textSpan.outerHTML = '&lt;input type=&quot;text&quot; class=&quot;edit-input&quot; id=&quot;edit-' + id + '&quot; value=&quot;' + escapedVal + '&quot;&gt;';&#10;      actionsDiv.innerHTML = '';&#10;      var saveBtn = document.createElement('button');&#10;      saveBtn.className = 'edit-save-btn';&#10;      saveBtn.textContent = 'Save';&#10;      saveBtn.setAttribute('data-id', id);&#10;      actionsDiv.appendChild(saveBtn);&#10;      var cancelBtn = document.createElement('button');&#10;      cancelBtn.className = 'edit-cancel-btn';&#10;      cancelBtn.textContent = 'Cancel';&#10;      actionsDiv.appendChild(cancelBtn);&#10;      var editInput = document.getElementById('edit-' + id);&#10;      editInput.focus();&#10;      saveBtn.addEventListener('click', function() {&#10;        var newText = editInput.value.trim();&#10;        if (!newText) { alert('Task cannot be empty.'); return; }&#10;        var formData = new FormData();&#10;        formData.append('id', id);&#10;        formData.append('text', newText);&#10;        fetch('/edit', {&#10;          method: 'POST',&#10;          body: formData&#10;        }).then(function(r) { return r.text(); })&#10;        .then(function(html) {&#10;          document.body.innerHTML = html;&#10;          initEventListeners();&#10;        });&#10;      });&#10;      cancelBtn.addEventListener('click', function() {&#10;        location.reload();&#10;      });&#10;      editInput.addEventListener('keydown', function(e) {&#10;        if (e.key === 'Enter') { saveBtn.click(); }&#10;        if (e.key === 'Escape') { cancelBtn.click(); }&#10;      });&#10;    });&#10;  });&#10;  // Delete todo from list&#10;  document.querySelectorAll('.delete-btn').forEach(function(btn) {&#10;    btn.addEventListener('click', function() {&#10;      var id = this.getAttribute('data-id');&#10;      var li = this.closest('.todo-item');&#10;      var params = new URLSearchParams();&#10;      params.append('id', id);&#10;      fetch('/delete', {&#10;        method: 'POST',&#10;        headers: {'Content-Type': 'application/x-www-form-urlencoded'},&#10;        body: params&#10;      }).then(function(r) { return r.text(); })&#10;      .then(function(html) {&#10;        document.body.innerHTML = html;&#10;        initEventListeners();&#10;      });&#10;    });&#10;  });&#10;  // Reusable init function for re-binding events after DOM replacement&#10;  function initEventListeners() {&#10;    // Re-bind form validation&#10;    var form = document.querySelector('.input-form');&#10;    if (form) {&#10;      form.addEventListener('submit', function(e) {&#10;        var input = document.getElementById('todo-input');&#10;        var value = input.value.trim();&#10;        if (!value) {&#10;          e.preventDefault();&#10;          document.querySelector('.error-message').textContent = 'Please enter a task.';&#10;          document.querySelector('.error-message').classList.add('visible');&#10;          return;&#10;        }&#10;      });&#10;      var inputEl = document.getElementById('todo-input');&#10;      if (inputEl) { inputEl.addEventListener('input', function() {&#10;        if (this.value.trim()) { document.querySelector('.error-message').classList.remove('visible'); }&#10;      }); }&#10;    }&#10;    document.querySelectorAll('.todo-checkbox').forEach(function(cb) {&#10;      cb.addEventListener('change', function() {&#10;        var id = this.getAttribute('value');&#10;        var formData = new FormData();&#10;        formData.append('id', id);&#10;        fetch('/toggle', { method: 'POST', body: formData })&#10;          .then(function(r) { return r.text(); })&#10;          .then(function(html) { document.body.innerHTML = html; initEventListeners(); });&#10;      });&#10;    });&#10;    document.querySelectorAll('.edit-btn').forEach(function(btn) {&#10;      btn.addEventListener('click', function() {&#10;        var id = this.getAttribute('data-id');&#10;        var li = this.closest('.todo-item');&#10;        var textSpan = li.querySelector('.todo-text');&#10;        var originalText = textSpan.textContent;&#10;        var actionsDiv = li.querySelector('.todo-actions');&#10;        var escapedVal = originalText.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;').replace(/&quot;/g, '&amp;#34;');&#10;        textSpan.outerHTML = '&lt;input type=&quot;text&quot; class=&quot;edit-input&quot; id=&quot;edit-' + id + '&quot; value=&quot;' + escapedVal + '&quot;&gt;';&#10;        actionsDiv.innerHTML = '';&#10;        var saveBtn = document.createElement('button');&#10;        saveBtn.className = 'edit-save-btn';&#10;        saveBtn.textContent = 'Save';&#10;        saveBtn.setAttribute('data-id', id);&#10;        actionsDiv.appendChild(saveBtn);&#10;        var cancelBtn = document.createElement('button');&#10;        cancelBtn.className = 'edit-cancel-btn';&#10;        cancelBtn.textContent = 'Cancel';&#10;        actionsDiv.appendChild(cancelBtn);&#10;        var editInput = document.getElementById('edit-' + id);&#10;        editInput.focus();&#10;        saveBtn.addEventListener('click', function() {&#10;          var newText = editInput.value.trim();&#10;          if (!newText) { alert('Task cannot be empty.'); return; }&#10;          var formData = new FormData();&#10;          formData.append('id', id);&#10;          formData.append('text', newText);&#10;          fetch('/edit', { method: 'POST', body: formData })&#10;            .then(function(r) { return r.text(); })&#10;            .then(function(html) { document.body.innerHTML = html; initEventListeners(); });&#10;        });&#10;        cancelBtn.addEventListener('click', function() { location.reload(); });&#10;        editInput.addEventListener('keydown', function(e) {&#10;          if (e.key === 'Enter') { saveBtn.click(); }&#10;          if (e.key === 'Escape') { cancelBtn.click(); }&#10;        });&#10;      });&#10;    });&#10;    document.querySelectorAll('.delete-btn').forEach(function(btn) {&#10;      btn.addEventListener('click', function() {&#10;        var id = this.getAttribute('data-id');&#10;        var li = this.closest('.todo-item');&#10;        var params = new URLSearchParams();&#10;        params.append('id', id);&#10;        fetch('/delete', {&#10;          method: 'POST',&#10;          headers: {'Content-Type': 'application/x-www-form-urlencoded'},&#10;          body: params&#10;        }).then(function(r) { return r.text(); })&#10;        .then(function(html) { document.body.innerHTML = html; initEventListeners(); });&#10;      });&#10;    });&#10;  }&#10;  initEventListeners();&#10;  &lt;/script&gt;&#10;  &lt;/body&gt;&#10;  &lt;/html&gt;&#10;assert '&lt;li class=&quot;todo-item&quot;&gt;Buy groceries&lt;/li&gt;' in '&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n&lt;head&gt;\n&lt;meta charset=&quot;UTF-8&quot;&gt;\n&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,...ody.innerHTML = html; initEventListeners(); });\n    });\n  });\n}\ninitEventListeners();\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;'">def test_add_todo():
+        """Criteria 1 &amp; 2 &amp; 4: page has input+button; submitting adds task to visible list; stored in memory."""
+    
+        # Criterion 1: GET / displays input field and submit button
+        html = _get()
+        assert 'id="todo-input"' in html, "Input field missing"
+        assert 'type="submit"' in html, "Submit button missing"
+    
+        # Criterion 2 &amp; 4: POST adds task to visible list (in-memory persistence)
+        task_name = "Buy groceries"
+        html_after = _post(task_name)
+&gt;       assert "&lt;li class=\"todo-item\"&gt;Buy groceries&lt;/li&gt;" in html_after, \
+            f"Task not added to visible list. Got:\n{html_after}"
+E       AssertionError: Task not added to visible list. Got:
+E         &lt;!DOCTYPE html&gt;
+E         &lt;html lang="en"&gt;
+E         &lt;head&gt;
+E         &lt;meta charset="UTF-8"&gt;
+E         &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+E         &lt;title&gt;Todo App&lt;/title&gt;
+E         &lt;style&gt;
+E           * { box-sizing: border-box; margin: 0; padding: 0; }
+E           body {
+E             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+E             background-color: #f5f7fa;
+E             color: #333;
+E             line-height: 1.6;
+E             padding: 20px;
+E           }
+E           .container {
+E             max-width: 600px;
+E             margin: 0 auto;
+E             padding: 20px;
+E           }
+E           h1 {
+E             text-align: center;
+E             color: #2c3e50;
+E             margin-bottom: 24px;
+E             font-size: 1.8rem;
+E           }
+E           .input-form {
+E             display: flex;
+E             gap: 10px;
+E             margin-bottom: 20px;
+E           }
+E           .input-form input[type="text"] {
+E             flex: 1;
+E             padding: 12px 16px;
+E             border: 2px solid #ddd;
+E             border-radius: 8px;
+E             font-size: 1rem;
+E             outline: none;
+E             transition: border-color 0.2s;
+E           }
+E           .input-form input[type="text"]:focus {
+E             border-color: #3498db;
+E           }
+E           .input-form button {
+E             padding: 12px 24px;
+E             background-color: #3498db;
+E             color: white;
+E             border: none;
+E             border-radius: 8px;
+E             font-size: 1rem;
+E             cursor: pointer;
+E             transition: background-color 0.2s;
+E             white-space: nowrap;
+E           }
+E           .input-form button:hover {
+E             background-color: #2980b9;
+E           }
+E           .error-message {
+E             color: #e74c3c;
+E             font-size: 0.9rem;
+E             margin-bottom: 16px;
+E             padding: 10px;
+E             background-color: #fdecea;
+E             border-radius: 6px;
+E             display: none;
+E           }
+E           .error-message.visible {
+E             display: block;
+E           }
+E           .empty-state {
+E             text-align: center;
+E             color: #7f8c8d;
+E             font-size: 1.1rem;
+E             padding: 40px 20px;
+E             background-color: #fff;
+E             border-radius: 8px;
+E             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+E           }
+E           .todo-list {
+E             list-style: none;
+E           }
+E           .todo-item {
+E             background-color: #fff;
+E             padding: 14px 18px;
+E             margin-bottom: 10px;
+E             border-radius: 8px;
+E             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+E             font-size: 1rem;
+E             word-break: break-word;
+E             display: flex;
+E             align-items: center;
+E             gap: 12px;
+E           }
+E           .todo-item.completed {
+E             background-color: #f8f9fa;
+E             opacity: 0.6;
+E           }
+E           .todo-item.completed .todo-text {
+E             text-decoration: line-through;
+E             color: #95a5a6;
+E           }
+E           .todo-checkbox {
+E             width: 20px;
+E             height: 20px;
+E             cursor: pointer;
+E             flex-shrink: 0;
+E           }
+E           .todo-text {
+E             flex: 1;
+E             word-break: break-word;
+E           }
+E           .edit-input {
+E             flex: 1;
+E             padding: 6px 10px;
+E             border: 2px solid #3498db;
+E             border-radius: 6px;
+E             font-size: 1rem;
+E             outline: none;
+E           }
+E           .edit-save-btn {
+E             padding: 4px 12px;
+E             background-color: #27ae60;
+E             color: white;
+E             border: none;
+E             border-radius: 4px;
+E             font-size: 0.85rem;
+E             cursor: pointer;
+E             flex-shrink: 0;
+E           }
+E           .edit-save-btn:hover {
+E             background-color: #219a52;
+E           }
+E           .edit-cancel-btn {
+E             padding: 4px 12px;
+E             background-color: #95a5a6;
+E             color: white;
+E             border: none;
+E             border-radius: 4px;
+E             font-size: 0.85rem;
+E             cursor: pointer;
+E             flex-shrink: 0;
+E           }
+E           .edit-cancel-btn:hover {
+E             background-color: #7f8c8d;
+E           }
+E           .todo-actions {
+E             display: flex;
+E             gap: 6px;
+E             flex-shrink: 0;
+E           }
+E           .delete-btn {
+E             padding: 4px 10px;
+E             background-color: #e74c3c;
+E             color: white;
+E             border: none;
+E             border-radius: 4px;
+E             font-size: 0.85rem;
+E             cursor: pointer;
+E           }
+E           .delete-btn:hover {
+E             background-color: #c0392b;
+E           }
+E           .edit-btn {
+E             padding: 4px 10px;
+E             background-color: #f39c12;
+E             color: white;
+E             border: none;
+E             border-radius: 4px;
+E             font-size: 0.85rem;
+E             cursor: pointer;
+E           }
+E           .edit-btn:hover {
+E             background-color: #e67e22;
+E           }
+E           @media (max-width: 480px) {
+E             .container { padding: 12px; }
+E             h1 { font-size: 1.5rem; margin-bottom: 16px; }
+E             .input-form { flex-direction: column; gap: 8px; }
+E             .input-form button { width: 100%; }
+E             body { padding: 10px; }
+E             .todo-item { flex-wrap: wrap; }
+E             .todo-actions { margin-top: 6px; }
+E           }
+E         &lt;/style&gt;
+E         &lt;/head&gt;
+E         &lt;body&gt;
+E         &lt;div class="container"&gt;
+E           &lt;h1&gt;My Todos&lt;/h1&gt;
+E         
+E           &lt;form class="input-form" method="post" action="/"&gt;
+E             &lt;input type="text" id="todo-input" name="task" placeholder="Enter a new task..." autocomplete="off"&gt;
+E             &lt;button type="submit"&gt;Add Task&lt;/button&gt;
+E           &lt;/form&gt;
+E         
+E           &lt;div class="error-message"&gt;&lt;/div&gt;
+E         
+E           &lt;div class="empty-state" style="display:none;"&gt;No tasks yet&lt;/div&gt;
+E           &lt;ul class="todo-list"&gt;
+E             &lt;li class="todo-item" data-id="1"&gt;
+E               &lt;input type="checkbox" class="todo-checkbox" id="cb-1" name="toggle" value="1"&gt;
+E               &lt;label for="cb-1"&gt;&lt;span class="todo-text"&gt;Beta&lt;/span&gt;&lt;/label&gt;
+E               &lt;div class="todo-actions"&gt;
+E                 &lt;button class="edit-btn" data-id="1"&gt;Edit&lt;/button&gt;
+E                 &lt;button class="delete-btn" data-id="1"&gt;Delete&lt;/button&gt;
+E               &lt;/div&gt;
+E             &lt;/li&gt;
+E             &lt;li class="todo-item" data-id="2"&gt;
+E               &lt;input type="checkbox" class="todo-checkbox" id="cb-2" name="toggle" value="2"&gt;
+E               &lt;label for="cb-2"&gt;&lt;span class="todo-text"&gt;Buy groceries&lt;/span&gt;&lt;/label&gt;
+E               &lt;div class="todo-actions"&gt;
+E                 &lt;button class="edit-btn" data-id="2"&gt;Edit&lt;/button&gt;
+E                 &lt;button class="delete-btn" data-id="2"&gt;Delete&lt;/button&gt;
+E               &lt;/div&gt;
+E             &lt;/li&gt;
+E           &lt;/ul&gt;
+E         &lt;/div&gt;
+E         &lt;script&gt;
+E         document.querySelector('.input-form').addEventListener('submit', function(e) {
+E           var input = document.getElementById('todo-input');
+E           var value = input.value.trim();
+E           if (!value) {
+E             e.preventDefault();
+E             document.querySelector('.error-message').textContent = 'Please enter a task.';
+E             document.querySelector('.error-message').classList.add('visible');
+E             return;
+E           }
+E         });
+E         document.getElementById('todo-input').addEventListener('input', function() {
+E           if (this.value.trim()) {
+E             document.querySelector('.error-message').classList.remove('visible');
+E           }
+E         });
+E         // Toggle todo completion status
+E         document.querySelectorAll('.todo-checkbox').forEach(function(cb) {
+E           cb.addEventListener('change', function() {
+E             var id = this.getAttribute('value');
+E             var params = new URLSearchParams();
+E             params.append('id', id);
+E             fetch('/toggle', {
+E               method: 'POST',
+E               headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+E               body: params
+E             }).then(function(r) { return r.text(); })
+E             .then(function(html) {
+E               document.body.innerHTML = html;
+E               initEventListeners();
+E             });
+E           });
+E         });
+E         // Enable inline editing for todos
+E         document.querySelectorAll('.edit-btn').forEach(function(btn) {
+E           btn.addEventListener('click', function() {
+E             var id = this.getAttribute('data-id');
+E             var li = this.closest('.todo-item');
+E             var textSpan = li.querySelector('.todo-text');
+E             var originalText = textSpan.textContent;
+E             var actionsDiv = li.querySelector('.todo-actions');
+E             var escapedVal = originalText.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;').replace(/"/g, '&amp;#34;');
+E             textSpan.outerHTML = '&lt;input type="text" class="edit-input" id="edit-' + id + '" value="' + escapedVal + '"&gt;';
+E             actionsDiv.innerHTML = '';
+E             var saveBtn = document.createElement('button');
+E             saveBtn.className = 'edit-save-btn';
+E             saveBtn.textContent = 'Save';
+E             saveBtn.setAttribute('data-id', id);
+E             actionsDiv.appendChild(saveBtn);
+E             var cancelBtn = document.createElement('button');
+E             cancelBtn.className = 'edit-cancel-btn';
+E             cancelBtn.textContent = 'Cancel';
+E             actionsDiv.appendChild(cancelBtn);
+E             var editInput = document.getElementById('edit-' + id);
+E             editInput.focus();
+E             saveBtn.addEventListener('click', function() {
+E               var newText = editInput.value.trim();
+E               if (!newText) { alert('Task cannot be empty.'); return; }
+E               var formData = new FormData();
+E               formData.append('id', id);
+E               formData.append('text', newText);
+E               fetch('/edit', {
+E                 method: 'POST',
+E                 body: formData
+E               }).then(function(r) { return r.text(); })
+E               .then(function(html) {
+E                 document.body.innerHTML = html;
+E                 initEventListeners();
+E               });
+E             });
+E             cancelBtn.addEventListener('click', function() {
+E               location.reload();
+E             });
+E             editInput.addEventListener('keydown', function(e) {
+E               if (e.key === 'Enter') { saveBtn.click(); }
+E               if (e.key === 'Escape') { cancelBtn.click(); }
+E             });
+E           });
+E         });
+E         // Delete todo from list
+E         document.querySelectorAll('.delete-btn').forEach(function(btn) {
+E           btn.addEventListener('click', function() {
+E             var id = this.getAttribute('data-id');
+E             var li = this.closest('.todo-item');
+E             var params = new URLSearchParams();
+E             params.append('id', id);
+E             fetch('/delete', {
+E               method: 'POST',
+E               headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+E               body: params
+E             }).then(function(r) { return r.text(); })
+E             .then(function(html) {
+E               document.body.innerHTML = html;
+E               initEventListeners();
+E             });
+E           });
+E         });
+E         // Reusable init function for re-binding events after DOM replacement
+E         function initEventListeners() {
+E           // Re-bind form validation
+E           var form = document.querySelector('.input-form');
+E           if (form) {
+E             form.addEventListener('submit', function(e) {
+E               var input = document.getElementById('todo-input');
+E               var value = input.value.trim();
+E               if (!value) {
+E                 e.preventDefault();
+E                 document.querySelector('.error-message').textContent = 'Please enter a task.';
+E                 document.querySelector('.error-message').classList.add('visible');
+E                 return;
+E               }
+E             });
+E             var inputEl = document.getElementById('todo-input');
+E             if (inputEl) { inputEl.addEventListener('input', function() {
+E               if (this.value.trim()) { document.querySelector('.error-message').classList.remove('visible'); }
+E             }); }
+E           }
+E           document.querySelectorAll('.todo-checkbox').forEach(function(cb) {
+E             cb.addEventListener('change', function() {
+E               var id = this.getAttribute('value');
+E               var formData = new FormData();
+E               formData.append('id', id);
+E               fetch('/toggle', { method: 'POST', body: formData })
+E                 .then(function(r) { return r.text(); })
+E                 .then(function(html) { document.body.innerHTML = html; initEventListeners(); });
+E             });
+E           });
+E           document.querySelectorAll('.edit-btn').forEach(function(btn) {
+E             btn.addEventListener('click', function() {
+E               var id = this.getAttribute('data-id');
+E               var li = this.closest('.todo-item');
+E               var textSpan = li.querySelector('.todo-text');
+E               var originalText = textSpan.textContent;
+E               var actionsDiv = li.querySelector('.todo-actions');
+E               var escapedVal = originalText.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;').replace(/"/g, '&amp;#34;');
+E               textSpan.outerHTML = '&lt;input type="text" class="edit-input" id="edit-' + id + '" value="' + escapedVal + '"&gt;';
+E               actionsDiv.innerHTML = '';
+E               var saveBtn = document.createElement('button');
+E               saveBtn.className = 'edit-save-btn';
+E               saveBtn.textContent = 'Save';
+E               saveBtn.setAttribute('data-id', id);
+E               actionsDiv.appendChild(saveBtn);
+E               var cancelBtn = document.createElement('button');
+E               cancelBtn.className = 'edit-cancel-btn';
+E               cancelBtn.textContent = 'Cancel';
+E               actionsDiv.appendChild(cancelBtn);
+E               var editInput = document.getElementById('edit-' + id);
+E               editInput.focus();
+E               saveBtn.addEventListener('click', function() {
+E                 var newText = editInput.value.trim();
+E                 if (!newText) { alert('Task cannot be empty.'); return; }
+E                 var formData = new FormData();
+E                 formData.append('id', id);
+E                 formData.append('text', newText);
+E                 fetch('/edit', { method: 'POST', body: formData })
+E                   .then(function(r) { return r.text(); })
+E                   .then(function(html) { document.body.innerHTML = html; initEventListeners(); });
+E               });
+E               cancelBtn.addEventListener('click', function() { location.reload(); });
+E               editInput.addEventListener('keydown', function(e) {
+E                 if (e.key === 'Enter') { saveBtn.click(); }
+E                 if (e.key === 'Escape') { cancelBtn.click(); }
+E               });
+E             });
+E           });
+E           document.querySelectorAll('.delete-btn').forEach(function(btn) {
+E             btn.addEventListener('click', function() {
+E               var id = this.getAttribute('data-id');
+E               var li = this.closest('.todo-item');
+E               var params = new URLSearchParams();
+E               params.append('id', id);
+E               fetch('/delete', {
+E                 method: 'POST',
+E                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+E                 body: params
+E               }).then(function(r) { return r.text(); })
+E               .then(function(html) { document.body.innerHTML = html; initEventListeners(); });
+E             });
+E           });
+E         }
+E         initEventListeners();
+E         &lt;/script&gt;
+E         &lt;/body&gt;
+E         &lt;/html&gt;
+E       assert '&lt;li class="todo-item"&gt;Buy groceries&lt;/li&gt;' in '&lt;!DOCTYPE html&gt;\n&lt;html lang="en"&gt;\n&lt;head&gt;\n&lt;meta charset="UTF-8"&gt;\n&lt;meta name="viewport" content="width=device-width,...ody.innerHTML = html; initEventListeners(); });\n    });\n  });\n}\ninitEventListeners();\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;'
+
+test_us-001.py:32: AssertionError</failure></testcase><testcase classname="output.todo-app.20260715-154310.test.test_us-001" name="test_empty_input_validation" time="0.001" /><testcase classname="output.todo-app.20260715-154310.test.test_us-004" name="test_delete_todo" time="0.004" /></testsuite></testsuites>
